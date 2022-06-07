@@ -1,10 +1,14 @@
-rabbitmq:
-  image: rabbitmq:management
-  ports:
-    - "5672:5672"
-    - "15672:15672"
+version: '3'
 
-zipkin:
-  image: openzipkin/zipkin
-  ports:
-    - "9411:9411"
+services:
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"

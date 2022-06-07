@@ -17,7 +17,7 @@ public class EchoListener {
 
     @RabbitListener(id = "test-echo", bindings = {
             @QueueBinding(value = @Queue("test-echo-queue"), exchange = @Exchange("X-test"), key = "echo")
-    })
+    }, errorHandler = "leh")
     @NewSpan
     public String echo(@Payload EchoRequest echoRequest) {
         LOG.info("Echo start");
